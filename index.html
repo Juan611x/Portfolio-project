@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Portfolio de Juan Ignacio Gandara — desarrollador web especializado en HTML, CSS y JavaScript. Proyectos, habilidades y contacto.">
+
+  <link href="./styles.css" rel="stylesheet" />
+  <script src="./index.js" defer></script>
+
+  <title>Portfolio</title>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">Juan Ignacio Gandara</h1>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
+        <ul id="primary-navigation" class="nav-list">
+          <li><a href="#about">Acerca</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#skills">Habilidades</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="about" class="about container" aria-labelledby="about-heading">
+      <h2 id="about-heading">Sobre mí</h2>
+      <p>Soy desarrollador web con interés en crear experiencias accesibles y modernas. Trabajo con HTML, CSS y
+        JavaScript para construir sitios responsivos y mantenibles.</p>
+    </section>
+
+    <section id="projects" class="projects container" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Proyectos</h2>
+      <div class="project-filters" aria-label="Filtros de proyectos">
+        <button data-filter="all" class="filter-btn" aria-pressed="true">Todos</button>
+        <button data-filter="web" class="filter-btn" aria-pressed="false">Web</button>
+        <button data-filter="mobile" class="filter-btn" aria-pressed="false">Mobile</button>
+      </div>
+
+      <article class="project" data-category="web">
+        <h3>Proyecto de ejemplo 1</h3>
+        <figure>
+          <img src="./assets/Web.jpg" alt="Captura del proyecto 1" data-full="https://via.placeholder.com/800x450">
+          <figcaption>Descripción corta del proyecto 1.</figcaption>
+        </figure>
+        <p>Breve explicación del objetivo del proyecto, tecnologías usadas y rol.</p>
+      </article>
+
+      <article class="project" data-category="mobile">
+        <h3>Proyecto de ejemplo 2</h3>
+        <figure>
+          <img src="./assets/Movile.jpg" alt="Captura del proyecto 2" data-full="https://via.placeholder.com/800x450">
+          <figcaption>Descripción corta del proyecto 2.</figcaption>
+        </figure>
+        <p>Breve explicación del objetivo del proyecto, tecnologías usadas y rol.</p>
+      </article>
+
+      <!-- Lightbox modal -->
+      <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1">
+        <div class="lightbox-content">
+          <button class="lightbox-close" aria-label="Cerrar">×</button>
+          <img src="" alt="" class="lightbox-img">
+          <p class="lightbox-caption"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills container" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Habilidades</h2>
+      <ul>
+        <li>HTML5 semántico</li>
+        <li>CSS moderno (Flexbox / Grid)</li>
+        <li>JavaScript (ES6+)</li>
+        <li>Accesibilidad (a11y)</li>
+        <li>Control de versiones (Git)</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="contact container" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contacto</h2>
+      <form id="contact-form" novalidate>
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" name="name" required placeholder="Tu nombre">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="tu@ejemplo.com">
+        </div>
+
+        <div class="form-group">
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
+        </div>
+
+        <button type="submit">Enviar</button>
+        <p id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+  <footer role="contentinfo" class="container">
+    <p>&copy; Juan Ignacio Gandara — <a href="#contact">Contacto</a></p>
+  </footer>
+</body>
+
+</html>
